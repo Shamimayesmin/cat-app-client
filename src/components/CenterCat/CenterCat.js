@@ -22,8 +22,9 @@ const CenterCat = () => {
 				
 			<p>34</p>
 			<p>cat card is added in my component</p>
-			<p>34</p>
-			<p>34</p>
+			<p>cat card is added in my component</p>
+			<p>cat card is added in my component</p>
+			
 			
 				
 				
