@@ -20,10 +20,10 @@ const CenterCat = () => {
 				<h2>2
 				</h2>
 				
-				<h3>4</h3>
+			
 				<h3>5</h3>
 				<h3>6</h3>
-				
+				<p>this is center cat component</p>
 				
 				
 			</div>
