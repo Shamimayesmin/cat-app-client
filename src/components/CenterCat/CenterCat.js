@@ -16,18 +16,6 @@ const CenterCat = () => {
 			}
 				
 			<div>
-				<h3>1</h3>
-				<h2>2
-				</h2>
-				
-			<p>34</p>
-			<p>cat card is added in my component</p>
-			<p>cat card is added in my component</p>
-			<p>cat card is added in my component</p>
-			
-			
-				
-				
 				
 				
 			</div>
