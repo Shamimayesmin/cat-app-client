@@ -1,0 +1,73 @@
+[
+    {
+        
+        "cat_id": "01",
+        "title": "Boots",
+        "img": "https://i.ibb.co/jzwCxtm/cat5.jpg",
+        "any" : "",
+        "description" : ""
+        
+    },
+    {
+        
+        "cat_id": "02",
+        "title": "Kiddos",
+        "img": "https://i.ibb.co/Q69M8Lv/cat2.jpg",
+        "any" : "",
+        "description" : ""
+        
+    },
+    {
+        
+        "cat_id": "03",
+        "title": "Loona",
+        "img": "https://i.ibb.co/Qpv6zd0/cat3.jpg",
+        "any" : "",
+        "description" : ""
+       
+    },
+    {
+       
+        "cat_id": "04",
+        "title": "Chinni",
+        "img": "https://i.ibb.co/jzwCxtm/cat5.jpg",
+        "any" : "",
+        "description" : ""
+        
+    },
+    {
+        "cat_id": "05",
+        "title": "Tabby",
+        "img": "https://i.ibb.co/HYCsrrB/cat6.jpg",
+        "any" : "",
+        "description" : ""
+        
+    },
+    {
+       
+        "cat_id": "06",
+        "title": "Tiger",
+        "img": "https://i.ibb.co/L850Lxj/cat7.jpg",
+        "any" : "",
+        "description" : ""
+       
+    },
+    {
+        
+        "cat_id": "07",
+        "title": "Tabby2",
+        "img": "https://i.ibb.co/N9FrYDP/cat8.jpg",
+        "any" : "",
+        "description" : ""
+       
+    },
+    {
+        
+        "cat_id": "08",
+        "title": "Rickey",
+        "img": "https://i.ibb.co/ChjsXqw/cat9.jpg",
+        "any" : "",
+        "description" : ""
+       
+    }
+]
