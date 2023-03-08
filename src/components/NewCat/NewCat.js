@@ -11,16 +11,6 @@ const NewCat = ({setItem}) => {
 	}, []);
 
 
-    const handleIncrement = (cat) => {
-		const itemToUpdate = cats.find((ct) => ct._id === cat._id);
-		const updatedItem = { ...itemToUpdate, counter: itemToUpdate.counter + 1 };
-		const updatedData = cats.map((item) =>
-			item._id === cat._id ? updatedItem : item
-		);
-		setCats(updatedData);
-		setItem(cat.title);
-		// console.log(item);
-	};
 
     return (
         <div

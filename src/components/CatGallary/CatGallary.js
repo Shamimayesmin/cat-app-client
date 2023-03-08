@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NewCat from "../NewCat/NewCat";
-// import { useLoaderData } from 'react-router-dom';
+
 import SingleCard from "./SingleCard";
 
 const CatGallary = ({ setItem }) => {
