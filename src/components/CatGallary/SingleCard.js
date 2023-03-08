@@ -1,11 +1,10 @@
 import React from 'react';
-// import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom';
 
 const SingleCard = ({data,handleIncrement}) => {
     
-    const {img,categoryName,description,_id} = data
+    const {img,categoryName,description} = data
     return (
         <div className=''>
             <Card style={{ width: "full" }}>
@@ -15,7 +14,7 @@ const SingleCard = ({data,handleIncrement}) => {
 					<Card.Text>
 						{description}
 					</Card.Text>
-					{/* <Button variant="primary"></Button> */}
+					
 				</Card.Body>
 			</Card>
         </div>
