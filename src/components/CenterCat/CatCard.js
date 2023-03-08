@@ -5,26 +5,24 @@ import Modal from "react-bootstrap/Modal";
 
 import Form from "react-bootstrap/Form";
 
-const CatCard = ({ cat ,setFiltered}) => {
+const CatCard = ({ cat, setFiltered }) => {
 	// console.log(cat);
-	const { categoryName, img, description,counter,_id } = cat;
+	const { categoryName, img, description, counter, _id } = cat;
 
 	const [show, setShow] = useState(false);
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
-
-    const handleUpdateForm = (event) => {
+	const handleUpdateForm = (event) => {
 		event.preventDefault();
 		const updatedName = event.target.categoryName.value;
 		const updatedImage = event.target.img.value;
 		const updatedCounter = event.target.counter.value;
-        const makeInt = parseFloat(updatedCounter)
-		
-		
-        console.log(updatedName,updatedImage,updatedCounter);
-		fetch(` http://localhost:5000/edit/${_id}`, {
+		const makeInt = parseFloat(updatedCounter);
+
+		console.log(updatedName, updatedImage, updatedCounter);
+		fetch(`  https://cat-app-server.vercel.app/edit/${_id}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
@@ -32,18 +30,17 @@ const CatCard = ({ cat ,setFiltered}) => {
 			body: JSON.stringify({
 				updatedName,
 				updatedImage,
-                // updatedCounter
-                makeInt
+				// updatedCounter
+				makeInt,
 			}),
 		})
 			.then((res) => res.json())
 			.then((data) => {
 				if (data.matchedCount > 0) {
-                    alert('updated cat')
+					alert("updated cat");
 					// toast.success("Form updated");
 					event.target.reset();
-                    setFiltered()
-
+					setFiltered();
 				}
 			});
 	};
@@ -59,8 +56,6 @@ const CatCard = ({ cat ,setFiltered}) => {
 					</Button>
 
 					<>
-						
-
 						<Modal
 							show={show}
 							onHide={handleClose}
@@ -74,16 +69,31 @@ const CatCard = ({ cat ,setFiltered}) => {
 								<Form onSubmit={handleUpdateForm}>
 									<Form.Group className="mb-3" controlId="formBasicEmail">
 										<Form.Label>Cat Name</Form.Label>
-										<Form.Control name="categoryName" defaultValue={categoryName} type="text" placeholder="Enter cat name" />
+										<Form.Control
+											name="categoryName"
+											defaultValue={categoryName}
+											type="text"
+											placeholder="Enter cat name"
+										/>
 									</Form.Group>
 
 									<Form.Group className="mb-3" controlId="formBasicPassword">
 										<Form.Label>Image</Form.Label>
-										<Form.Control name="img" defaultValue={img} type="text" placeholder="Image" />
+										<Form.Control
+											name="img"
+											defaultValue={img}
+											type="text"
+											placeholder="Image"
+										/>
 									</Form.Group>
 									<Form.Group className="mb-3" controlId="formBasicCounter">
 										<Form.Label>Cat Clicks</Form.Label>
-										<Form.Control name="counter" defaultValue={counter} type="text" placeholder="number" />
+										<Form.Control
+											name="counter"
+											defaultValue={counter}
+											type="text"
+											placeholder="number"
+										/>
 									</Form.Group>
 
 									<Button variant="primary" type="submit">

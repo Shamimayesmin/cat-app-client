@@ -6,7 +6,7 @@ const CenterCat = () => {
 	const [dataCat, setDataCat] = useState([]);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/category")
+		fetch(" https://cat-app-server.vercel.app/category")
 			.then((res) => res.json())
 			.then((data) => setDataCat(data));
 	}, []);

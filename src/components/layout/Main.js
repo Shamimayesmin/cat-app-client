@@ -11,72 +11,66 @@ import CatCard from "../CenterCat/CatCard";
 import RightSide from "../RightSide/RightSide";
 import RightSideForm from "../RightSide/RightSideForm";
 
-
 const Main = () => {
-    const [item, setItem] = useState('');
+	const [item, setItem] = useState("");
 	const [filtered, setFiltered] = useState([]);
-    const [data, setData] = useState([]);
+	const [data, setData] = useState([]);
 
-    useEffect(() => {
-		fetch("http://localhost:5000/category")
+	useEffect(() => {
+		fetch(" https://cat-app-server.vercel.app/category")
 			.then((res) => res.json())
 			.then((data) => setData(data));
 	}, []);
 
-    useEffect(()=>{
-		const result = data.filter((dt)=> {
-			return dt?.categoryName.toLowerCase().includes(item?.toLowerCase())
-		})
-		setFiltered(result)
-	},[data,item])
+	useEffect(() => {
+		const result = data.filter((dt) => {
+			return dt?.categoryName.toLowerCase().includes(item?.toLowerCase());
+		});
+		setFiltered(result);
+	}, [data, item]);
 
-
-
-    
-
-
-    // const handleIncrement = (id) => {
-    //     const itemToUpdate = data.find(item => item.id === id);
-    //     const updatedItem = {...itemToUpdate, counter: itemToUpdate.counter + 1};
-    //     const updatedData = data.map(item => item.id === id ? updatedItem : item);
-    //     setData(updatedData);
-    //   }
-      
+	// const handleIncrement = (id) => {
+	//     const itemToUpdate = data.find(item => item.id === id);
+	//     const updatedItem = {...itemToUpdate, counter: itemToUpdate.counter + 1};
+	//     const updatedData = data.map(item => item.id === id ? updatedItem : item);
+	//     setData(updatedData);
+	//   }
 
 	return (
 		<div>
 			<Header></Header>
-            
-            <Container className="mt-4">
-				<Row lg={4} md={6} sm={12} className='row row-cols-1 row-cols-md-2 row-cols-lg-3'>
+
+			<Container className="mt-4">
+				<Row
+					lg={4}
+					md={6}
+					sm={12}
+					className="row row-cols-1 row-cols-md-2 row-cols-lg-3"
+				>
 					<Col lg="3" className="">
-                    <LeftNav setItem={setItem} item={item}></LeftNav>
+						<LeftNav setItem={setItem} item={item}></LeftNav>
 					</Col>
 					<Col lg="5">
-                    
-                    {/* <Outlet></Outlet> */}
-                    {
-                        filtered?.map((cat)=>(<CatCard key={cat._id} cat={cat} setFiltered={setFiltered}></CatCard>))
-                    }
-                    {
-                        
-                    }
-                    
+						{/* <Outlet></Outlet> */}
+						{filtered?.map((cat) => (
+							<CatCard
+								key={cat._id}
+								cat={cat}
+								setFiltered={setFiltered}
+							></CatCard>
+						))}
+						{}
 					</Col>
-					<Col lg="4" className=''>
-                        <RightSide></RightSide>
-                        {/* <RightSideForm></RightSideForm> */}
-                    </Col>
+					<Col lg="4" className="">
+						<RightSide></RightSide>
+						{/* <RightSideForm></RightSideForm> */}
+					</Col>
 				</Row>
-                
-                <div className='w-100 mt-5 '>
-               
-                <CatGallary setItem={setItem}></CatGallary>
-               
-			    </div>
-               
+
+				<div className="w-100 mt-5 ">
+					<CatGallary setItem={setItem}></CatGallary>
+				</div>
 			</Container>
-			
 		</div>
 	);
 };

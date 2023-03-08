@@ -7,32 +7,30 @@ import Home from "../layout/Home";
 import Main from "../layout/Main";
 
 export const router = createBrowserRouter([
-    {
-        path : '/',
-        element : <Main></Main>,
-        children : [
-            
-            {
-                path : '/',
-                element : <Home></Home>,
-                // loader : () =>fetch('http://localhost:5000/cats')
-            },
-            // {
-            //     path : '/',
-            //     element : <CatGallary></CatGallary>,
-            //     loader : () =>fetch('http://localhost:5000/cats')
-            // },
-            // {
-            //     path : '/category/:id',
-            //     element :<CenterCat></CenterCat> ,
-                
-                
-            // },
-            {
-                path : '/cats/:id',
-                // element :<CenterCat></CenterCat> ,
-                // loader : ({params}) =>fetch(`http://localhost:5000/cats/${params.id}`)
-            },
-        ]
-    }
-])
+	{
+		path: "/",
+		element: <Main></Main>,
+		children: [
+			{
+				path: "/",
+				element: <Home></Home>,
+				// loader : () =>fetch(' https://cat-app-server.vercel.app/cats')
+			},
+			// {
+			//     path : '/',
+			//     element : <CatGallary></CatGallary>,
+			//     loader : () =>fetch(' https://cat-app-server.vercel.app/cats')
+			// },
+			// {
+			//     path : '/category/:id',
+			//     element :<CenterCat></CenterCat> ,
+
+			// },
+			{
+				path: "/cats/:id",
+				// element :<CenterCat></CenterCat> ,
+				// loader : ({params}) =>fetch(` https://cat-app-server.vercel.app/cats/${params.id}`)
+			},
+		],
+	},
+]);

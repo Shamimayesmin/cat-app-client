@@ -18,7 +18,7 @@ const RightSide = () => {
 			counter: data.counter,
 		};
 		console.log(catInfo);
-		fetch("http://localhost:5000/category", {
+		fetch(" https://cat-app-server.vercel.app/category", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -78,7 +78,9 @@ const RightSide = () => {
 					<Form.Group className="mb-3" controlId="formBasicPassword">
 						<Form.Label>Description</Form.Label>
 						<Form.Control
-							{...register("description", { required: "Description is required" })}
+							{...register("description", {
+								required: "Description is required",
+							})}
 							type="text"
 							placeholder="Message"
 						/>
