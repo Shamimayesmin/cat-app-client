@@ -7,6 +7,7 @@ import LeftNav from "../LeftNav/LeftNav";
 import CatGallary from "../CatGallary/CatGallary";
 import CatCard from "../CenterCat/CatCard";
 import RightSide from "../RightSide/RightSide";
+import NewCat from "../NewCat/NewCat";
 
 const Main = () => {
 	const [item, setItem] = useState("");
@@ -55,12 +56,18 @@ const Main = () => {
 					</Col>
 					<Col lg="4" className="">
 						<RightSide></RightSide>
-						{/* <RightSideForm></RightSideForm> */}
+						
 					</Col>
 				</Row>
 
 				<div className="w-100 mt-5 ">
 					<CatGallary setItem={setItem}></CatGallary>
+                    
+                    
+				</div>
+				<div className="w-100 mt-5 mb-5">
+                <NewCat setItem={setItem}></NewCat>
+                    
 				</div>
 			</Container>
 		</div>

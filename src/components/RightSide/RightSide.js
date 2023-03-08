@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router-dom";
 
 const RightSide = () => {
 	const {
@@ -10,15 +11,17 @@ const RightSide = () => {
 		handleSubmit,
 	} = useForm();
 
+    const navigate = useNavigate()
 	const handleAddCat = (data) => {
 		console.log("clicked");
 		const catInfo = {
-			catName: data.catName,
-			image: data.image,
+			title: data.title,
+			img: data.img,
 			counter: data.counter,
+            description:data.description
 		};
 		console.log(catInfo);
-		fetch(" https://cat-app-server.vercel.app/category", {
+		fetch(" https://cat-app-server.vercel.app/cats", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -30,38 +33,38 @@ const RightSide = () => {
 				console.log(data);
 				if (data.acknowledged) {
 					alert("cat posted");
-					// toast.success("Student Information added");
-					// navigate("/dashboard/manage");
+					// toast.success("Cat Information added");
+					navigate("/");
 				}
 			})
 			.catch((err) => console.error(err));
 	};
 	return (
-		<div className="h-[1000px] bg-warning rounded">
-			<div className="rounded-lg p-3 shadow-sm">
+		<div className="h-[1000px] bg-warning bg-gradient rounded">
+			<div className="rounded p-3 shadow-sm">
 				<h2 className="fs-4">Create New Cat</h2>
 				<Form onSubmit={handleSubmit(handleAddCat)}>
 					<Form.Group className="mb-3" controlId="formBasicEmail">
 						<Form.Label>Cat Name</Form.Label>
 						<Form.Control
-							{...register("catName", { required: "Name is required" })}
+							{...register("title", { required: "Name is required" })}
 							type="text"
 							placeholder="Enter Name"
 						/>
-						{errors.catName && (
-							<p className="text-danger">{errors.catName?.message}</p>
+						{errors.title && (
+							<p className="text-danger">{errors.title?.message}</p>
 						)}
 					</Form.Group>
 
 					<Form.Group className="mb-3" controlId="formBasicPassword">
 						<Form.Label>Cat Image</Form.Label>
 						<Form.Control
-							{...register("image", { required: "Image is required" })}
+							{...register("img", { required: "Image is required" })}
 							type="text"
 							placeholder="Image"
 						/>
-						{errors.image && (
-							<p className="text-danger">{errors.image?.message}</p>
+						{errors.img && (
+							<p className="text-danger">{errors.img?.message}</p>
 						)}
 					</Form.Group>
 					<Form.Group className="mb-3" controlId="formBasicPassword">

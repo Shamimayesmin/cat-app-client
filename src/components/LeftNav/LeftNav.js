@@ -26,7 +26,7 @@ const LeftNav = ({ setItem, item }) => {
 	//to={`/category${cat._id}`}
 
 	return (
-		<div className="border p-10">
+		<div className="p-10">
 			{catName.map((cat) => (
 				<p key={cat._id}>
 					<button
