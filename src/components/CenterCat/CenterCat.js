@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import CatCard from "./CatCard";
 
 const CenterCat = () => {
-	const dataCat = useLoaderData();
+	const [dataCat, setDataCat] = useState([]);
+
+	useEffect(() => {
+		fetch("http://localhost:5000/category")
+			.then((res) => res.json())
+			.then((data) => setDataCat(data));
+	}, []);
    
 	// console.log(dataCat);
 
+	
 	return (
 		<div className="row">
-			
+			<h2>this is center cat</h2>
 			
 			{
 				dataCat?.map((cat)=><CatCard key={cat._id} cat={cat}></CatCard>)

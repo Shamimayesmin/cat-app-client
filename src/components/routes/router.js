@@ -22,12 +22,12 @@ export const router = createBrowserRouter([
             //     element : <CatGallary></CatGallary>,
             //     loader : () =>fetch('http://localhost:5000/cats')
             // },
-            {
-                path : '/category/:id',
-                element :<CenterCat></CenterCat> ,
-                loader : ({params}) =>fetch(`http://localhost:5000/category/${params.id}`)
+            // {
+            //     path : '/category/:id',
+            //     element :<CenterCat></CenterCat> ,
                 
-            },
+                
+            // },
             {
                 path : '/cats/:id',
                 // element :<CenterCat></CenterCat> ,

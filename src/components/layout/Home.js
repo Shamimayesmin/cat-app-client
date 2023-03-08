@@ -9,7 +9,7 @@ import CatGallary from '../CatGallary/CatGallary';
 const Home = () => {
     return (
         <div>
-            
+            {/* <CenterCat></CenterCat> */}
         </div>
     );
 };
